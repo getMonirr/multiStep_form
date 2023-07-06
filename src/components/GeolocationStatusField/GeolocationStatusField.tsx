@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 
 type geolocationData = {
   geolocation: string
@@ -10,18 +10,15 @@ type geolocationProps = geolocationData & {
 };
 
 const GeolocationStatusField = ({geolocation, updateFields}: geolocationProps) => {
-  // const [status, setStatus] = useState<string>("Acquiring coordinates...");
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
-        // setStatus(`latitude: ${latitude}, longitude: ${longitude}`);
         updateFields({geolocation:`latitude: ${latitude}, longitude: ${longitude}` })
       },
       (error) => {
         // Handle any errors that occur during Geolocation capture
-        // setStatus(`${error.message || "Error capturing coordinates."}`);
         console.error(error);
       }
     );

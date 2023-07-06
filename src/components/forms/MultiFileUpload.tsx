@@ -2,17 +2,6 @@ import { Button, Typography } from "@mui/material";
 import GeolocationStatusField from "../GeolocationStatusField/GeolocationStatusField";
 import { ChangeEvent, useState } from "react";
 
-type SingleFile = {
-  name: string;
-  type: string;
-  size: number;
-};
-
-type MultiFileData = SingleFile[];
-
-type MultiFileProps = MultiFileData & {
-  updateFields: (fields: Partial<MultiFileData>) => void;
-};
 
 const MultiFileUpload = ({ geolocation,multi_file, updateFields }: any) => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);

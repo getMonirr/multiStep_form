@@ -1,6 +1,4 @@
 import { Button, TextField, Typography } from "@mui/material";
-import axios from "axios";
-import useAuth from "../../hooks/useAuth";
 import WebWrapper from "../WebWrapper";
 import FormWrapper from "../FormWrapper";
 import { Link } from "react-router-dom";

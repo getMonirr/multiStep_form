@@ -1,5 +1,5 @@
 import { Button, Typography } from "@mui/material";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 
 type SingleFile = {
   path?: string;
@@ -20,7 +20,6 @@ type FileUploadProps = FileUploadData & {
 };
 
 const FileUpload = ({ single_file, updateFields }: FileUploadProps) => {
-  // const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const fileList = event.target.files;
@@ -30,7 +29,6 @@ const FileUpload = ({ single_file, updateFields }: FileUploadProps) => {
       const fileType = file.type;
       // Check if the file type is either JPG or PDF
       if (fileType === "image/jpeg" || fileType === "application/pdf") {
-        // setSelectedFile(file);
 
         // Create the single_file object
         const updatedSingleFile: SingleFile = {
